@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taiko Mono Checker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="scanline"></div>
+  <div class="noise"></div>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo-group">
+        <div class="drum-icon">
+          <div class="drum-face">
+            <span class="don">●</span>
+            <span class="kat">●</span>
+          </div>
+        </div>
+        <div class="title-block">
+          <h1>MONO CHECKER</h1>
+          <p class="subtitle">osu!taiko · Priority Quest Tool</p>
+        </div>
+      </div>
+      <div class="badge">MPG QUEST</div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="upload-section">
+      <div class="upload-zone" id="uploadZone">
+        <input type="file" id="fileInput" accept=".osu" hidden />
+        <div class="upload-content">
+          <div class="upload-icon">⬆</div>
+          <p class="upload-main">Drop your .osu file here</p>
+          <p class="upload-sub">or <button class="link-btn" id="browseBtn">click to browse</button></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section" id="infoSection" hidden>
+      <div class="info-card">
+        <div class="info-row">
+          <span class="info-label">TITLE</span>
+          <span class="info-value" id="infoTitle">—</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">ARTIST</span>
+          <span class="info-value" id="infoArtist">—</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">DIFFICULTY</span>
+          <span class="info-value" id="infoDiff">—</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">NOTES</span>
+          <span class="info-value" id="infoNotes">—</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="result-section" id="resultSection" hidden>
+      <div class="result-header">
+        <span class="result-label">SCAN RESULT</span>
+        <div class="result-count" id="resultCount"></div>
+      </div>
+
+      <div id="resultOk" class="result-ok" hidden>
+        <div class="ok-icon">✔</div>
+        <p class="ok-text">No mono runs found</p>
+        <p class="ok-sub">No consecutive same-color patterns were detected</p>
+      </div>
+
+      <div id="resultList" class="result-list" hidden></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Mono run = dddd / kkkk or more consecutive same-color notes</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
